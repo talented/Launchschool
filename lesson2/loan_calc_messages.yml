@@ -1,0 +1,4 @@
+welcome: 'welcome to our loan calculator!'
+loan_am: 'How much money in total would you like to loan?'
+loan_dur: 'in how many months would you like to pay'
+valid_number: 'Please enter a valid amount with only numbers!'

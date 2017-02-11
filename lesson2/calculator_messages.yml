@@ -1,0 +1,21 @@
+# calculator_messages
+
+en:
+  welcome: 'Welcome to Calculator! Enter your name:'
+  valid_name: 'Make sure to use a valid name!'
+  valid_number: 'please enter a valid number!'
+  first_num: "What's the first number?"
+  second_num: "What's the second number?"
+  valid_operator: 'please choose a valid operator! 1/2/3/4'
+  perform_again: 'Do you want to perform another calculation? (Y/N)'
+  bye: 'Goodbye!'
+
+tr:
+    welcome: 'Hoşgeldiniz! Lütfen başlamak için adınızı yazınız.'
+    valid_name: 'Lütfen geçerli bir isim giriniz!'
+    valid_number: 'Lütfen geçerli bir sayı giriniz!'
+    first_num: "ilk sayı?"
+    second_num: "İkinci sayı?"
+    valid_operator: 'Lütfen geçerli bir operatör seçiniz! 1/2/3/4'
+    perform_again: 'Başka bir işlem yapmak ister misiniz? (Y/N)'
+    bye: 'Hoşçakalın!'
