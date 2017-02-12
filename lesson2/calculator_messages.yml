@@ -9,6 +9,11 @@ en:
   valid_operator: 'please choose a valid operator! 1/2/3/4'
   perform_again: 'Do you want to perform another calculation? (Y/N)'
   bye: 'Goodbye!'
+  operation: "What operation would you like to perform?\n
+                1 - add\n
+                2 - subtract\n
+                3 - multiply\n
+                4 - divide\n"
 
 tr:
     welcome: 'Hoşgeldiniz! Lütfen başlamak için adınızı yazınız.'
@@ -19,3 +24,8 @@ tr:
     valid_operator: 'Lütfen geçerli bir operatör seçiniz! 1/2/3/4'
     perform_again: 'Başka bir işlem yapmak ister misiniz? (Y/N)'
     bye: 'Hoşçakalın!'
+    operation: "Hangi işlemi yapmak istiyorsun?\n
+                  1 - toplama\n
+                  2 - çıkarma\n
+                  3 - çarpma\n
+                  4 - bölme\n"

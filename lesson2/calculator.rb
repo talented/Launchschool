@@ -41,6 +41,19 @@ def operation_to_message(op)
   end
 end
 
+def operation_to_message_tr(op)
+  case op
+  when '1'
+    'toplanıyor'
+  when '2'
+    'çıkartılıyor'
+  when '3'
+    'çarpılıyor'
+  when '4'
+    'bölünüyor'
+  end
+end
+
 number1, number2 = ''
 
 puts 'Do you want to change the default language to Turkish? Y/N'
@@ -54,6 +67,8 @@ loop do
   if name.empty? || name.to_i.to_s == name
     prompt('valid_name')
   else
+    puts @language == 'tr' ? "Hoşgeldin #{name}" : "Welcome #{name}"
+    # puts "Welcome #{name}" if @launguage == 'en'
     break
   end
 end
@@ -79,13 +94,7 @@ loop do # main loop
     end
   end
 
-  operator_prompt = <<-MSG
-  What operation would you like to perform?
-    1 - add
-    2 - subtract
-    3 - multiply
-    4 - divide
-MSG
+  operator_prompt = prompt('operation')
 
   puts operator_prompt.to_s
   operator = Kernel.gets.chomp
@@ -97,7 +106,8 @@ MSG
     end
   end
 
-  puts("#{operation_to_message(operator)} the two numbers...")
+  puts("#{operation_to_message(operator)} the two numbers...") if @language == 'en'
+  puts("bu iki sayı #{operation_to_message_tr(operator)}") if @language == 'tr'
 
   result = case operator
            when '1'
@@ -110,7 +120,9 @@ MSG
              number1.to_f / number2.to_f
   end
 
-  puts("the result is #{result}!")
+  puts("the result is #{format('%02.2f', result)}!") if @language == 'en'
+  puts("işlem sonucu #{format('%02.2f', result)}!") if @language == 'tr'
+
   prompt('perform_again')
   answer = Kernel.gets.chomp
   break unless answer.downcase.start_with?('y')
