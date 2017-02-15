@@ -2,16 +2,16 @@
 # computer makes a choice
 # winner is displayed
 VALID_CHOICES = %w(rock paper scissors lizard spock).freeze
-WIN_MATCH = [['rock', 'scissors'], ['rock', 'lizard'], ['paper', 'rock'],
-['paper', 'spock'], ['scissors', 'paper'], ['scissors', 'lizard'], 
-['lizard', 'paper'], ['lizard', 'spock'], ['spock', 'rock'], ['spock', 'scissors']]
+WIN_MATCH = [%w(rock scissors), %w(rock lizard), %w(paper rock),
+             %w(paper spock), %w(scissors paper), %w(scissors lizard),
+             %w(lizard paper), %w(lizard spock), %w(spock rock), %w(spock scissors)].freeze
 
 def prompt(message)
   puts "=> #{message}"
 end
 
 def clear_screen
-  system("clear") || system("cls")
+  system('clear') || system('cls')
 end
 
 def abbreviation(choice)
@@ -25,7 +25,7 @@ def abbreviation(choice)
 end
 
 def win?(first, second)
-  #(first == 'rock' && (second == 'scissors' || second == 'lizard')) ||
+  # (first == 'rock' && (second == 'scissors' || second == 'lizard')) ||
   #  (first == 'paper' && (second == 'rock' || second == 'spock')) ||
   #  (first == 'scissors' && (second == 'paper' || second == 'lizard')) ||
   #  (first == 'lizard' && (second == 'paper' || second == 'spock')) ||
@@ -59,7 +59,6 @@ loop do
   loop do
     user = ''
     loop do
-
       puts <<-MSG
 => Enter your selection:
 => r for rock
@@ -102,9 +101,7 @@ loop do
   puts('')
   prompt('Another game! Y/press any key to exit')
   answer = gets.chomp
-  unless answer.downcase.start_with?('y') # answer !~ /y/i
-    break
-  end
+  break unless answer.downcase.start_with?('y') # answer !~ /y/i
 end
 
 prompt('Good bye!')
