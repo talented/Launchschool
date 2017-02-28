@@ -22,7 +22,9 @@
 require 'io/console'
 # require 'pry'
 
-HIT_LIMIT = 17 # max. number for the dealer to decide hit or stay
+GAME_MAX = 31
+ACE = 11
+HIT_LIMIT = GAME_MAX - 4 # max. number for the dealer to decide hit or stay
 WINNING = 3 # number to be reached to be the king of table
 
 def prompt(msg)
@@ -69,7 +71,7 @@ def display_dealer(dealer_cards, delimiter = ' and ')
     prompt("Dealer has: #{dealer_cards[0, (dealer_cards.size - 1)].join(', ')}#{delimiter}#{dealer_cards.last}")
     prompt("Dealer's cards total is #{check_total(dealer_cards)}")
     puts ""
-    prompt("*** BlackJack ***") if check_total(dealer_cards) == 21
+    prompt("*** BlackJack ***") if check_total(dealer_cards) == GAME_MAX
   end
 end
 
@@ -101,10 +103,10 @@ def check_total(cards)
 
   # if any Ace in hand
   if cards.include?('Ace')
-    if total_num > 10
+    if total_num > GAME_MAX - ACE
       total_num += cards.count('Ace')
     else
-      total_num += 11
+      total_num += ACE
     end
   end
 
@@ -156,7 +158,7 @@ loop do
       display_dealer(dealer_cards)
       display_player(player_cards)
 
-      if check_total(player_cards) == 21
+      if check_total(player_cards) == GAME_MAX
         prompt("*** BlackJack ***")
         break
       end
@@ -174,7 +176,7 @@ loop do
       if answer.start_with?('h')
         hit(player_cards)
 
-        if check_total(player_cards) > 21
+        if check_total(player_cards) > GAME_MAX
           puts ""
           display_dealer(dealer_cards)
           display_player(player_cards)
@@ -186,7 +188,7 @@ loop do
       else
         stand(dealer_cards)
 
-        if check_total(dealer_cards) > 21
+        if check_total(dealer_cards) > GAME_MAX
           puts ""
           prompt("Dealer is busted.. You won!")
           player_score += 1
@@ -200,7 +202,7 @@ loop do
     dealer_total = check_total(dealer_cards)
 
     puts "----------------------------------"
-    if dealer_total <= 21 && player_total <= 21
+    if dealer_total <= GAME_MAX && player_total <= GAME_MAX
       if dealer_total > player_total
         prompt("You lost!")
         dealer_score += 1
