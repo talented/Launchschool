@@ -22,7 +22,7 @@
 require 'io/console'
 # require 'pry'
 
-GAME_MAX = 31
+GAME_MAX = 21
 ACE = 11
 HIT_LIMIT = GAME_MAX - 4 # max. number for the dealer to decide hit or stay
 WINNING = 3 # number to be reached to be the king of table
