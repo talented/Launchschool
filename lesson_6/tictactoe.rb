@@ -67,9 +67,9 @@ end
 
 def alternate_player(current_player)
   if current_player == COMPUTER
-    current_player = PLAYER
+    PLAYER
   else
-    current_player = COMPUTER
+    COMPUTER
   end
 end
 
@@ -86,6 +86,10 @@ def empty_squares(brd)
 end
 
 def joinor(arr, delimiter = ', ', phrase = 'or')
+  # squares_str = (arr - [arr.last]).join(delimiter)
+  # squares_str << arr.size == 1 ? '' : " #{phrase} "
+  # squares_str << "#{arr.last}"
+
   "#{(arr - [arr.last]).join(delimiter)}#{arr.size == 1 ? '' : ' ' + phrase + ' '}#{arr.last}"
 end
 
@@ -104,8 +108,6 @@ end
 def find_at_risk_square(line, brd, marker)
   if brd.values_at(*line).count(marker) == 2
     brd.select { |k, v| line.include?(k) && v == INITIAL_MARKER }.keys.first
-  else
-    nil
   end
 end
 
@@ -127,12 +129,20 @@ def computer_places_piece(brd)
   end
 
   if !square
-    if brd[5] == INITIAL_MARKER
-      square = 5
-    else
-      square = empty_squares(brd).sample
-    end
+    square = if brd[5] == INITIAL_MARKER
+               5
+             else
+               empty_squares(brd).sample
+             end
   end
+
+  # if !square
+  #  if brd[5] == INITIAL_MARKER
+  #    square = 5
+  #  else
+  #    square = empty_squares(brd).sample
+  #  end
+  # end
 
   brd[square] = COMPUTER_MARKER
 end
@@ -188,7 +198,7 @@ loop do
   loop do
     # definitions
     board = initialize_board
-    letter =~ /c/i ? current_player = COMPUTER : current_player = PLAYER
+    current_player = letter =~ /c/i ? COMPUTER : PLAYER
 
     # start
     loop do
