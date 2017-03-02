@@ -40,21 +40,20 @@ def valid_number?(num)
 end
 
 def add_card
-  str = ''
+
   random_card = rand(1..13)
   case random_card
   when 1
-    str = 'Ace'
+    'Ace'
   when 11
-    str = 'Jack'
+    'Jack'
   when 12
-    str = 'Queen'
+    'Queen'
   when 13
-    str = 'King'
+    'King'
   else
-    str = random_card.to_s
+    random_card.to_s
   end
-  str
 end
 
 def initialize_deck(dealer_cards, player_cards)
@@ -119,9 +118,7 @@ def hit(player_cards)
 end
 
 def stand(dealer_cards)
-  while check_total(dealer_cards) < HIT_LIMIT
-    dealer_cards.push(add_card)
-  end
+  dealer_cards.push(add_card) while check_total(dealer_cards) < HIT_LIMIT
   display_dealer(dealer_cards)
 end
 
