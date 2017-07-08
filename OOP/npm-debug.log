@@ -1,0 +1,110 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'git',
+1 verbose cli   '-params',
+1 verbose cli   '/GitAndUnixToolsOnPath' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData git
+8 silly fetchPackageMetaData /GitAndUnixToolsOnPath
+9 silly fetchNamedPackageData git
+10 silly mapToRegistry name git
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry data Result {
+13 silly mapToRegistry   raw: 'git',
+13 silly mapToRegistry   scope: null,
+13 silly mapToRegistry   escapedName: 'git',
+13 silly mapToRegistry   name: 'git',
+13 silly mapToRegistry   rawSpec: '',
+13 silly mapToRegistry   spec: 'latest',
+13 silly mapToRegistry   type: 'tag' }
+14 silly mapToRegistry uri https://registry.npmjs.org/git
+15 silly fetchOtherPackageData /GitAndUnixToolsOnPath
+16 silly cache add args [ '/GitAndUnixToolsOnPath', null ]
+17 verbose cache add spec /GitAndUnixToolsOnPath
+18 verbose request uri https://registry.npmjs.org/git
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 8:18:04 PM
+21 verbose request id d2fed6dd8b549d43
+22 http request GET https://registry.npmjs.org/git
+23 silly cache add parsed spec Result {
+23 silly cache add   raw: '/GitAndUnixToolsOnPath',
+23 silly cache add   scope: null,
+23 silly cache add   escapedName: null,
+23 silly cache add   name: null,
+23 silly cache add   rawSpec: '/GitAndUnixToolsOnPath',
+23 silly cache add   spec: '/GitAndUnixToolsOnPath',
+23 silly cache add   type: 'local' }
+24 error addLocal Could not install /GitAndUnixToolsOnPath
+25 silly fetchPackageMetaData Error: ENOENT: no such file or directory, open '/GitAndUnixToolsOnPath'
+25 silly fetchPackageMetaData     at Error (native)
+25 silly fetchPackageMetaData  error for /GitAndUnixToolsOnPath { Error: ENOENT: no such file or directory, open '/GitAndUnixToolsOnPath'
+25 silly fetchPackageMetaData     at Error (native)
+25 silly fetchPackageMetaData   errno: -2,
+25 silly fetchPackageMetaData   code: 'ENOENT',
+25 silly fetchPackageMetaData   syscall: 'open',
+25 silly fetchPackageMetaData   path: '/GitAndUnixToolsOnPath' }
+26 http 200 https://registry.npmjs.org/git
+27 verbose headers { server: 'nginx/1.10.1',
+27 verbose headers   'content-type': 'application/json',
+27 verbose headers   'last-modified': 'Mon, 20 Feb 2017 03:16:08 GMT',
+27 verbose headers   etag: 'W/"58aa5f78-278b"',
+27 verbose headers   'content-encoding': 'gzip',
+27 verbose headers   'cache-control': 'max-age=300',
+27 verbose headers   'content-length': '2304',
+27 verbose headers   'accept-ranges': 'bytes',
+27 verbose headers   date: 'Sun, 02 Jul 2017 18:18:05 GMT',
+27 verbose headers   via: '1.1 varnish',
+27 verbose headers   age: '0',
+27 verbose headers   connection: 'keep-alive',
+27 verbose headers   'x-served-by': 'cache-hhn1522-HHN',
+27 verbose headers   'x-cache': 'HIT',
+27 verbose headers   'x-cache-hits': '1',
+27 verbose headers   'x-timer': 'S1499019485.093220,VS0,VE2',
+27 verbose headers   vary: 'Accept-Encoding' }
+28 silly get cb [ 200,
+28 silly get   { server: 'nginx/1.10.1',
+28 silly get     'content-type': 'application/json',
+28 silly get     'last-modified': 'Mon, 20 Feb 2017 03:16:08 GMT',
+28 silly get     etag: 'W/"58aa5f78-278b"',
+28 silly get     'content-encoding': 'gzip',
+28 silly get     'cache-control': 'max-age=300',
+28 silly get     'content-length': '2304',
+28 silly get     'accept-ranges': 'bytes',
+28 silly get     date: 'Sun, 02 Jul 2017 18:18:05 GMT',
+28 silly get     via: '1.1 varnish',
+28 silly get     age: '0',
+28 silly get     connection: 'keep-alive',
+28 silly get     'x-served-by': 'cache-hhn1522-HHN',
+28 silly get     'x-cache': 'HIT',
+28 silly get     'x-cache-hits': '1',
+28 silly get     'x-timer': 'S1499019485.093220,VS0,VE2',
+28 silly get     vary: 'Accept-Encoding' } ]
+29 verbose get saving git to /Users/Rikkas/.npm/registry.npmjs.org/git/.cache.json
+30 verbose correctMkdir /Users/Rikkas/.npm correctMkdir not in flight; initializing
+31 silly rollbackFailedOptional Starting
+32 silly rollbackFailedOptional Finishing
+33 silly runTopLevelLifecycles Finishing
+34 silly install printInstalled
+35 verbose stack Error: ENOENT: no such file or directory, open '/GitAndUnixToolsOnPath'
+35 verbose stack     at Error (native)
+36 verbose cwd /Users/Rikkas/Documents/workspace/launchschool/OOP
+37 error Darwin 16.6.0
+38 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "git" "-params" "/GitAndUnixToolsOnPath"
+39 error node v6.11.0
+40 error npm  v3.10.10
+41 error path /GitAndUnixToolsOnPath
+42 error code ENOENT
+43 error errno -2
+44 error syscall open
+45 error enoent ENOENT: no such file or directory, open '/GitAndUnixToolsOnPath'
+46 error enoent ENOENT: no such file or directory, open '/GitAndUnixToolsOnPath'
+46 error enoent This is most likely not a problem with npm itself
+46 error enoent and is related to npm not being able to find a file.
+47 verbose exit [ -2, true ]
